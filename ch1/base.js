@@ -2,7 +2,6 @@
 // EX) /dev/stdin 파일에 적힌 텍스트를 읽어오는 경우
 
 let fs = require("fs");
-const { blob } = require("stream/consumers");
 let input = fs.readFileSync("/dev/stdin").toString().split("\n");
 console.log(input);
 // 줄바꿈 기호로 구분하여 리스트로 변환하기
@@ -18,7 +17,7 @@ let inputline = [];
 rl.on("line", function (line) {
   // 콘솔 입력 창에서 줄바꿈(Enter)를 입력할 때마다 호출
   inputline.push(line);
-}).on("closㄴe", function () {
+}).on("close", function () {
   // 콘솔 입력 창에서 Ctrl+C 혹은 Ctrl+D를 입력하면 호출
   console.log(input);
   process.exit();
