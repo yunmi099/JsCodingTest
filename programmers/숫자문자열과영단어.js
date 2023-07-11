@@ -14,11 +14,8 @@ function solution(s) {
   var answer = s;
 
   for (let i = 0; i < numbers.length; i++) {
-    let arr = answer.split(numbers[i]);
-    console.log(i);
-    console.log(`arr: ${arr}`);
-    answer = arr.join(i);
-    console.log(`answer: ${answer}`);
+    let arr = answer.split(numbers[i]); // number을 기준으로 split 하고 그 숫자 부분 사라짐
+    answer = arr.join(i); // 그 사라진 부분을 index로 join시켜서 매꿈
   }
   return Number(answer);
 }
