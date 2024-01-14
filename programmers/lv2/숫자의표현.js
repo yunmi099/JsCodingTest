@@ -34,17 +34,16 @@ function solution(n) {
   while (start <= n / 2) {
     if (sum === n) {
       answer += 1;
-      sum -= start;
+      sum = sum - start;
       start += 1;
     } else if (sum > n) {
-      sum -= start;
+      sum = sum - start;
       start += 1;
     } else {
       end += 1;
       sum += end;
     }
   }
-
   return answer + 1;
 }
 console.log(solution(15));
