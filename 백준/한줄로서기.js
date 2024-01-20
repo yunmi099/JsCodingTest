@@ -4,17 +4,17 @@ let input = fs.readFileSync(filePath).toString().trim().split("\n");
 n = Number(input[0]);
 let order = input[1].split(" ");
 let answer = new Array(n).fill(0);
-order.forEach((moreTallerPeople, name) => {
-  if (answer[moreTallerPeople] === 0) {
-    answer[moreTallerPeople] = name + 1;
-  } else {
-    for (let i = 0; i < answer.length; i++) {
-      if (answer[i] === 0 && name <= i) {
-        answer[i] = name + 1;
-        break;
-      }
+order.forEach((item, index) => {
+  let temp = Number(item);
+  while (1) {
+    let slicedArr = [...answer].join("").slice(0, temp);
+    let zeroCount = slicedArr.length - slicedArr.split(0).join("").length;
+    if (answer[temp] === 0 && zeroCount === Number(item)) {
+      answer[temp] = index + 1;
+      break;
+    } else {
+      temp = temp + 1;
     }
   }
 });
-
-console.log(answer);
+console.log(answer.join(" "));
