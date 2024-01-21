@@ -1,9 +1,8 @@
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = require("fs").readFileSync(filePath).toString().trim().split("\n");
-const N = input[0];
+const N = Number(input[0]);
 const inequality = input[1].split(" ");
 const visit = new Array(10).fill(0);
-
 let max = String(Number.MIN_SAFE_INTEGER);
 let min = String(Number.MAX_SAFE_INTEGER);
 
@@ -33,8 +32,8 @@ const dfs = (L, prev, result) => {
 
 for (let i = 0; i < 10; i++) {
   visit[i] = 1;
-  dfs(0, i, String(i));
+  dfs(0, i, `${i}`);
   visit[i] = 0;
 }
 
-console.log(`${min}\n${max}`);
+console.log(`${max}\n${min}`);
