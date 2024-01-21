@@ -23,4 +23,4 @@ const backtracking = (str, index) => {
 };
 
 backtracking("", 0);
-console.log(answer);
+console.log(answer.join("\n").trim());
