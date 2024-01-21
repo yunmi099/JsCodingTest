@@ -33,8 +33,12 @@ const bfs = () => {
   }
 };
 answer = bfs();
-if (answer !== undefined) {
-  console.log(answer);
+if (S == G) {
+  console.log(0);
 } else {
-  console.log("use the stairs");
+  if (answer !== undefined) {
+    console.log(answer);
+  } else {
+    console.log("use the stairs");
+  }
 }
