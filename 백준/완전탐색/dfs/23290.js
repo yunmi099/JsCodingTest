@@ -10,8 +10,6 @@ const [M, S] = input.shift();
 
 let board = Array.from(Array(4), () => Array.from(Array(4), () => []));
 
-console.log(board);
-
 const dx = [0, -1, -1, -1, 0, 1, 1, 1];
 const dy = [-1, -1, 0, 1, 1, 1, 0, -1];
 
